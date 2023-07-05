@@ -30,7 +30,9 @@
 	
 	 <script type="text/javascript">
 
-        
+            var max = Math.max.apply(null, window.dataList.map(function(item) {
+            return item.value
+        }));
         var option = {
             tooltip: {
                     formatter:function(params,ticket, callback){
@@ -39,7 +41,7 @@
                 },
             visualMap: {
                 min: 0,
-                max: 1500,
+                max: max,
                 left: 'left',
                 top: 'bottom',
                 text: ['高','低'],//取值范围的文字
